@@ -42,13 +42,16 @@ namespace SaleNotesTestJob
                 new CheckItem(new Goods("Винт", 25), 100),
             };
 
-            SaleDataSet.MakeCheck(ttt, Brega, DateTime.Now);
-            SaleDataSet.MakeCheck(ttt, Babus, DateTime.Now);
-            SaleDataSet.MakeCheck(ttt, Lomakin, DateTime.Now);
-            SaleDataSet.MakeCheck(ttt, Brega, DateTime.Now);
+            SaleDataSet.MakeCheck(ttt, Brega, DateTime.Now, ePayment.Cash);
+            SaleDataSet.MakeCheck(ttt, Babus, DateTime.Now, ePayment.NoPayment);
+            SaleDataSet.MakeCheck(ttt, Lomakin, DateTime.Now, ePayment.Visa);
+            SaleDataSet.MakeCheck(ttt, Brega, DateTime.Now, ePayment.Cash);
 
 
-            var mmm = SaleDataSet.GetChecks();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.DataSource = SaleDataSet.GetChecks();
+            //dataGridView1.ContextMenu = new ContextMenu(new MenuItem() { ""});
+
 
 
 

@@ -56,7 +56,7 @@ namespace DataProvider.Reports
                      .OrderByDescending(x => x.CountSale)
                      .FirstOrDefault();
 
-                return $"{result.Custoner.Name} - {result.CountSale}";
+                return $"{result.Custoner.Name}, Всего закрытых чеков: {result.CountSale}";
             }
 
 
@@ -64,12 +64,11 @@ namespace DataProvider.Reports
 
         public ReportByMonth(byte month)
         {
-            if (Checks == null) throw new Exception("Не указана коллекция для обработки");
-            //if (Checks.Count() > 0 && Year > 0) throw new Exception("За указанный год нет чеков");
-
-            _CurentChecks = Checks.Where(x=>x.Date.Month == month && x.Date.Year == Year).ToList();
-
             this.MonthNumber = month;
+            _CurentChecks = Checks.Where(x => x.Date.Month == month && x.Date.Year == Year).ToList();
+
+
+            if (_CurentChecks.Count() < 1 && Year > 0) throw new Exception("За указанный год нет чеков");
         }
     }
 }

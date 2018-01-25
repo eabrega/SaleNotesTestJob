@@ -144,6 +144,9 @@ namespace DataProvider
         /// </summary>
         /// <returns></returns>
         public List<ReportByCustomer> GetReportsByCustomers(int year) {
+
+            ReportByCustomer.Year = year;
+
             foreach (Customer item in Customers)
             {
                 ReportsByCustomers.Add(new ReportByCustomer(item));
@@ -151,7 +154,5 @@ namespace DataProvider
 
             return ReportsByCustomers;
         }
-
-
     }
 }

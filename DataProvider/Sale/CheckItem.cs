@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataProvider.Users;
 using System.Diagnostics;
+using System.Collections;
 
 namespace DataProvider.Sale
 {
@@ -24,11 +25,15 @@ namespace DataProvider.Sale
         /// </summary>
         public int Quantity { get; }
         /// <summary>
-        /// Стоимость 
+        /// Цена за еденицу, вычисляемое поле
         /// </summary>
-        public double Cost {
+        public string Price { get { return SaleGoods.Price.ToString("C"); } }
+        /// <summary>
+        /// Стоимость, вычисляемое поле
+        /// </summary>
+        public string Cost {
             get {
-                return SaleGoods.Price * Quantity;
+                return (SaleGoods.Price * Quantity).ToString("C");
             }
         }
 

@@ -11,48 +11,55 @@ namespace DataProvider.Sale
     /// <summary>
     /// Товарный чек
     /// </summary>
-    [DebuggerDisplay("{OrderNumber} {SaleCustomer.Name} - {Total} р.")]
+    [DebuggerDisplay("{Number} {Customer.Name} - {Total} р.")]
     public class Check
     {
         static int _number = 0;
         public Guid Identity { get; } = Guid.NewGuid();
-        public DateTime OrderDate { get; }
-        public long OrderNumber { get; }
-        public Customer SaleCustomer { get; }
-        public List<CheckItem> CheckItems { get; }
+        public DateTime Date { get; }
+        public long Number { get; }
+        public Customer Customer { get; }
+        public List<CheckItem> Items { get; }
         public ePayment PaymentType { get; }
         /// <summary>
-        ///  Цена всех позиций в чеке
+        ///  Цена всех позиций в чеке, вычисляемое поле
         /// </summary>
         public double Total {
             get {
-                return CheckItems.Sum(x => x.Cost);
+                return Items.Sum(x => x.Quantity * x.SaleGoods.Price);
             }
         }
+        /// <summary>
+        /// Форматированная строка таблицы
+        /// </summary>
+        public CheckVisualiser LikeTableRow { get; }
         public Check(List<CheckItem> checkItems, Customer customer, DateTime date, ePayment pay)
         {
             _number++;
-            OrderNumber = _number;
-            SaleCustomer = customer;
-            CheckItems = checkItems;
-            OrderDate = date;
+            Number = _number;
+            Customer = customer;
+            Items = checkItems;
+            Date = date;
             PaymentType = pay;
+
+            LikeTableRow = new CheckVisualiser(this);
         }
+
     }
 
     /// <summary>
     /// Конвертер для вывода в DataGrid
     /// </summary>
-    public class CheckToDataGrid
+    public class CheckVisualiser
     {
         Check _check { get; }
-        public long Number { get { return _check.OrderNumber; } }
-        public DateTime Data { get { return _check.OrderDate; } }
-        public string Name { get { return $"{_check.SaleCustomer.Name}"; } }
-        public string Email { get { return _check.SaleCustomer.Email; } }
-        public string Cost { get { return $"{_check.Total} p."; } }
+        public long Number { get { return _check.Number; } }
+        public string Data { get { return _check.Date.ToString("dd.MM.yyyy"); } }
+        public string Name { get { return $"{_check.Customer.Name}"; } }
+        public string Email { get { return _check.Customer.Email; } }
+        public string Cost { get { return $"{_check.Total.ToString("C")}"; } }
         public ePayment Payment { get { return _check.PaymentType; } }
-        public CheckToDataGrid(Check check) {
+        public CheckVisualiser(Check check) {
             _check = check;
         }
     }

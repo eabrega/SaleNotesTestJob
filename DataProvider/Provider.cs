@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using DataProvider.Users;
 using DataProvider.Sale;
+using System.Collections;
+
 namespace DataProvider
 {
-    public class Provider
+    public class Provider : IEnumerable
     {
         List<Customer> Customers { get; set; } = new List<Customer>();
         List<Check> Checks { get; set; } = new List<Check>();
         List<Goods> AllGoods { get; set; } = new List<Goods>();
-        public List<CheckToDataGrid> CheckDataView { get { return GetChecks(); } }
+        //public List<CheckVisualiser> CheckDataView { get { return GetChecksRows(); } }
         public Provider()
         {
         }
@@ -24,6 +26,12 @@ namespace DataProvider
         {
             return Customers;
         }
+        public List<CheckVisualiser> GetChecksVisual() {
+            return Checks.Select(x => x.LikeTableRow).ToList();
+        }
+        public List<Check> GetChecks() {
+            return Checks;
+        }
         public Customer GetCustomerByName(string name)
         {
             return Customers.Where(x => x.Name == name).FirstOrDefault();
@@ -32,18 +40,22 @@ namespace DataProvider
         /// Загрузить список продаж
         /// </summary>
         /// <returns></returns>
-        public List<CheckToDataGrid> GetChecks()
+        //public List<CheckVisualiser> GetChecksRows()
+        //{
+
+        //    List<CheckVisualiser> rows = new List<CheckVisualiser>();
+
+        //    foreach (var item in Checks)
+        //    {
+        //        rows.Add(new CheckVisualiser(item));
+        //    }
+
+
+        //    return rows;
+        //}
+        public Check GetCheckByIndex(int index)
         {
-
-            List<CheckToDataGrid> rows = new List<CheckToDataGrid>();
-
-            foreach (var item in Checks)
-            {
-                rows.Add(new CheckToDataGrid(item));
-            }
-
-
-            return rows;
+            return Checks[index];
         }
         public void MakeCheck(List<CheckItem> orderitem, Customer customer, DateTime date, ePayment pay)
         {
@@ -63,6 +75,13 @@ namespace DataProvider
 
             Customers.Add(new Customer(name, email));
 
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            var ttt = Checks.Select(x => x.LikeTableRow);
+
+            return ttt.GetEnumerator();
         }
     }
 }

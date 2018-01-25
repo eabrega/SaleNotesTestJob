@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Provider.cs" />
+    <Compile Include="Reports\ReportByMonth.cs" />
     <Compile Include="Sale\Goods.cs" />
     <Compile Include="Sale\CheckItem.cs" />
     <Compile Include="Sale\Сheck.cs" />
@@ -48,7 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\Сustomer.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\DataSources\DataProvider.Sale.CheckVisualiser.datasource" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

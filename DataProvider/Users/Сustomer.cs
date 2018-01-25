@@ -19,5 +19,10 @@ namespace DataProvider.Users
         {
             this.Email = email;
         }
+
+        public override string ToString()
+        {
+            return base.Name.ToString();
+        }
     }
 }

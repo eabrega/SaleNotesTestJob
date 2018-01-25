@@ -16,11 +16,14 @@ namespace DataProvider.Sale
         public Guid Identity { get; }
         public string Name { get; }
         public double Price { get; }
-
         public Goods(string name, double price) {
             Identity = Guid.NewGuid();
             Name = name;
             Price = price;
+        }
+        public override string ToString()
+        {
+            return Name.ToString();
         }
     }
 }

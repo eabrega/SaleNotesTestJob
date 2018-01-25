@@ -25,10 +25,36 @@ namespace SaleNotesTestJob.CheckForms
         {
             InitializeComponent();
 
+            DataSetInit(); // создание случайных чеков
+
+            ChecksView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            ChecksView.DataSource = SaleDataSet.GetChecksVisual();
+
+            ReportMonth.DataSource = SaleDataSet.GetReportsByMonths(2016);
+            ReportCustomer.DataSource = SaleDataSet.GetReportsByCustomers(22);
+
+
+            ChecksView.CellMouseDoubleClick += ChecksView_CellMouseDoubleClick;
+
+
+        }
+
+        void ChecksView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var row_index = SaleDataSet.GetCheckByIndex(e.RowIndex);
+
+            Form info = new CheckInfo.CheckInfo(row_index);
+            info.Show();
+        }
+
+        void DataSetInit() {
+
             customers.Add(new Customer("Брега", "eabrega@gmail.com"));
             customers.Add(new Customer("Ушакова", "babyy@gmail.com"));
             customers.Add(new Customer("Ломакина", "lomakin@gmail.com"));
             customers.Add(new Customer("Пушкин", "puskin@gmail.com"));
+
+            SaleDataSet.AddCustomers(customers);
 
             goods.Add(new Goods("Гвоздь", 10.86));
             goods.Add(new Goods("Шуруп", 17.40));
@@ -41,7 +67,7 @@ namespace SaleNotesTestJob.CheckForms
 
             Random rnd = new Random(DateTime.Now.Millisecond);
 
-            for (int i = 0, m = 1; i != 70; i++,m++)
+            for (int i = 0, m = 1; i != 70; i++, m++)
             {
                 List<CheckItem> checkItems = new List<CheckItem>();
 
@@ -58,31 +84,6 @@ namespace SaleNotesTestJob.CheckForms
 
                 SaleDataSet.MakeCheck(checkItems, customers[customer_index], data, ePayment.Cash);
             }
-
-            ChecksView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ChecksView.DataSource = SaleDataSet.GetChecksVisual();
-
-            ChecksView.CellMouseDoubleClick += ChecksView_CellMouseDoubleClick;
-
-
-            List<ReportByMonth> ReportsByMonth = new List<ReportByMonth>();
-
-            for (int i = 1; i < 13; i++)
-            {
-                ReportsByMonth.Add(new ReportByMonth(SaleDataSet.GetChecks(), (byte)i));
-            }
-
-
-            ReportMonth.DataSource = ReportsByMonth;
-
-        }
-
-        void ChecksView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var row_index = SaleDataSet.GetCheckByIndex(e.RowIndex);
-
-            Form info = new CheckInfo.CheckInfo(row_index);
-            info.Show();
         }
     }
 }

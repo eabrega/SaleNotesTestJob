@@ -4,21 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataProvider.Sale;
-using DataProvider.Users;
 
 namespace DataProvider.Reports
 {
     public class ReportByMonth
     {
-        List<Check> _checks { get; }
+        /// <summary>
+        /// Чеки по которым будет совершенна выборка
+        /// </summary>
+        static public List<Check> Checks;
+        static public int Year;
+        List<Check> _CurentChecks { get; }
         public byte MonthNumber { get; }
-        public string PaymentCost { get { return _checks.Sum(x => x.Total).ToString("C"); } }
+        public string PaymentCost { get { return _CurentChecks.Sum(x => x.Total).ToString("C"); } }
         public string Average {
             get {
-                if (_checks.Count > 0)
+                if (_CurentChecks.Count > 0)
                 {
 
-                    return _checks.Average(v => v.Total).ToString("C");
+                    return _CurentChecks.Average(v => v.Total).ToString("C");
                 }
                 else return null;
             }
@@ -26,7 +30,7 @@ namespace DataProvider.Reports
         public string TopSelling {
             get {
 
-                List<CheckItem> goods = _checks.SelectMany(x => x.Items).ToList();
+                List<CheckItem> goods = _CurentChecks.SelectMany(x => x.Items).ToList();
 
                 var topsalling = goods.GroupBy(x => x.SaleGoods)
                     .Select(sel => new { Name = sel.Key, Quantity = sel.Sum(v => v.Quantity) })
@@ -41,15 +45,15 @@ namespace DataProvider.Reports
         public string BestCustomer {
             get {
 
-                var result = _checks
+                var result = _CurentChecks
                     .Select(
-                        x=> new
-                            {
-                                Custoner = x.Customer,
-                                CountSale = _checks.Where(c => c.Customer == x.Customer).Count(),
-                            }
+                        x => new
+                        {
+                            Custoner = x.Customer,
+                            CountSale = _CurentChecks.Where(c => c.Customer == x.Customer).Count(),
+                        }
                      )
-                     .OrderByDescending(x=>x.CountSale)
+                     .OrderByDescending(x => x.CountSale)
                      .FirstOrDefault();
 
                 return $"{result.Custoner.Name} - {result.CountSale}";
@@ -58,10 +62,13 @@ namespace DataProvider.Reports
 
         }
 
-        public ReportByMonth(List<Check> checks, byte month)
+        public ReportByMonth(byte month)
         {
+            if (Checks == null) throw new Exception("Не указана коллекция для обработки");
+            //if (Checks.Count() > 0 && Year > 0) throw new Exception("За указанный год нет чеков");
 
-            this._checks = checks.Where(x => x.Date.Month == month).ToList();
+            _CurentChecks = Checks.Where(x=>x.Date.Month == month && x.Date.Year == Year).ToList();
+
             this.MonthNumber = month;
         }
     }

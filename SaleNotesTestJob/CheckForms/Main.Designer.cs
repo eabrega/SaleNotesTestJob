@@ -42,19 +42,23 @@
             this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ReportMonth = new System.Windows.Forms.DataGridView();
+            this.BestCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.BestCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportCustomer = new System.Windows.Forms.DataGridView();
             this.monthNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.averageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.topSellingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportByMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.curentCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costByYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportByCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkVisualiserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -64,10 +68,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChecksView)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportMonth)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStrip3.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportByMonthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkVisualiserBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,7 +197,7 @@
             this.tabPage2.Location = new System.Drawing.Point(8, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1648, 1071);
+            this.tabPage2.Size = new System.Drawing.Size(1648, 1032);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Отчет по месяцам";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -213,18 +220,47 @@
             this.ReportMonth.Name = "ReportMonth";
             this.ReportMonth.ReadOnly = true;
             this.ReportMonth.RowTemplate.Height = 33;
-            this.ReportMonth.Size = new System.Drawing.Size(1642, 1065);
+            this.ReportMonth.Size = new System.Drawing.Size(1642, 1026);
             this.ReportMonth.TabIndex = 0;
+            // 
+            // BestCustomer
+            // 
+            this.BestCustomer.DataPropertyName = "BestCustomer";
+            this.BestCustomer.HeaderText = "Покупатель";
+            this.BestCustomer.Name = "BestCustomer";
+            this.BestCustomer.ReadOnly = true;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.ReportCustomer);
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1648, 1032);
+            this.tabPage3.Size = new System.Drawing.Size(1648, 1071);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Отчет по покупателям";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(349, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip1.Size = new System.Drawing.Size(203, 39);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(191, 36);
+            this.toolStripButton2.Text = "Новый заказ";
             // 
             // toolStrip2
             // 
@@ -268,33 +304,23 @@
             this.toolStripButton1.Size = new System.Drawing.Size(182, 36);
             this.toolStripButton1.Text = "Покупатели";
             // 
-            // toolStrip1
+            // ReportCustomer
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(369, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(203, 39);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(191, 36);
-            this.toolStripButton2.Text = "Новый заказ";
-            // 
-            // BestCustomer
-            // 
-            this.BestCustomer.DataPropertyName = "BestCustomer";
-            this.BestCustomer.HeaderText = "Покупатель";
-            this.BestCustomer.Name = "BestCustomer";
-            this.BestCustomer.ReadOnly = true;
+            this.ReportCustomer.AllowUserToAddRows = false;
+            this.ReportCustomer.AllowUserToDeleteRows = false;
+            this.ReportCustomer.AutoGenerateColumns = false;
+            this.ReportCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReportCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.curentCustomerDataGridViewTextBoxColumn,
+            this.costByYearDataGridViewTextBoxColumn});
+            this.ReportCustomer.DataSource = this.reportByCustomerBindingSource;
+            this.ReportCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReportCustomer.Location = new System.Drawing.Point(3, 3);
+            this.ReportCustomer.Name = "ReportCustomer";
+            this.ReportCustomer.ReadOnly = true;
+            this.ReportCustomer.RowTemplate.Height = 33;
+            this.ReportCustomer.Size = new System.Drawing.Size(1642, 1065);
+            this.ReportCustomer.TabIndex = 0;
             // 
             // monthNumberDataGridViewTextBoxColumn
             // 
@@ -329,6 +355,24 @@
             // 
             this.reportByMonthBindingSource.DataSource = typeof(DataProvider.Reports.ReportByMonth);
             // 
+            // curentCustomerDataGridViewTextBoxColumn
+            // 
+            this.curentCustomerDataGridViewTextBoxColumn.DataPropertyName = "CurentCustomer";
+            this.curentCustomerDataGridViewTextBoxColumn.HeaderText = "CurentCustomer";
+            this.curentCustomerDataGridViewTextBoxColumn.Name = "curentCustomerDataGridViewTextBoxColumn";
+            this.curentCustomerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costByYearDataGridViewTextBoxColumn
+            // 
+            this.costByYearDataGridViewTextBoxColumn.DataPropertyName = "CostByYear";
+            this.costByYearDataGridViewTextBoxColumn.HeaderText = "CostByYear";
+            this.costByYearDataGridViewTextBoxColumn.Name = "costByYearDataGridViewTextBoxColumn";
+            this.costByYearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reportByCustomerBindingSource
+            // 
+            this.reportByCustomerBindingSource.DataSource = typeof(DataProvider.Reports.ReportByCustomer);
+            // 
             // checkVisualiserBindingSource
             // 
             this.checkVisualiserBindingSource.DataSource = typeof(DataProvider.Sale.CheckVisualiser);
@@ -351,13 +395,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChecksView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReportMonth)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportByMonthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkVisualiserBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -390,6 +437,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn averageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn topSellingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BestCustomer;
+        private System.Windows.Forms.DataGridView ReportCustomer;
+        private System.Windows.Forms.BindingSource reportByCustomerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curentCustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costByYearDataGridViewTextBoxColumn;
     }
 }
 

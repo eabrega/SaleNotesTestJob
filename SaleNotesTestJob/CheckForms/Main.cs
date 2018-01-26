@@ -25,29 +25,32 @@ namespace SaleNotesTestJob.CheckForms
         {
             InitializeComponent();
 
-            DataSetInit(30); // создание случайных чеков
+            DataSetInit(30, 12); // создание случайных чеков
 
             ChecksView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ChecksView.DataSource = SaleDataSet.GetChecksVisual().OrderBy(x=>x.Data).ToList();
+            ChecksView.DataSource = SaleDataSet.GetChecksVisual().OrderBy(x => x.Data).ToList();
 
             ChecksView.CellMouseDoubleClick += ChecksView_CellMouseDoubleClick;
 
-
-            tabControl1.Selected += TabPage2_Click;
-
+            tabControl1.Selected += TabPage2_Click;            
         }
 
         void TabPage2_Click(object sender, EventArgs e)
         {
             var m = (sender as TabControl).SelectedIndex;
 
-            if (m == 1) {
+            if (m == 1)
+            {
                 ReportMonth.DataSource = SaleDataSet.GetReportsByMonths(2016);
             }
-            if (m == 2) {
+            if (m == 2)
+            {
                 ReportCustomer.DataSource = SaleDataSet.GetReportsByCustomers(2016);
             }
-            
+            if (m == 3)
+            {
+                ReportRemided.DataSource = SaleDataSet.GetReportReminder();
+            }
         }
         void ChecksView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -56,7 +59,8 @@ namespace SaleNotesTestJob.CheckForms
             Form info = new CheckInfo.CheckInfo(row_index);
             info.Show();
         }
-        void DataSetInit(int count_googs) {
+        void DataSetInit(int count_googs, int checks_count)
+        {
 
             customers.Add(new Customer("Брега", "eabrega@gmail.com"));
             customers.Add(new Customer("Ушакова", "babyy@gmail.com"));
@@ -65,18 +69,19 @@ namespace SaleNotesTestJob.CheckForms
 
             SaleDataSet.AddCustomers(customers);
 
-            goods.Add(new Goods("Гвоздь", 10.86));
-            goods.Add(new Goods("Шуруп", 17.40));
+
             goods.Add(new Goods("Шайба М10", 2));
             goods.Add(new Goods("Винт М10", 25));
             goods.Add(new Goods("Шуруповерт Makita f56", 11430.40));
-            goods.Add(new Goods("Пылесос Bosch", 6726.72));
+            goods.Add(new Goods("Молоток", 720.72));
             goods.Add(new Goods("Бензин АИ-95", 38.40));
+            goods.Add(new Goods("Гвоздь", 10.86));
+            goods.Add(new Goods("Шуруп", 17.40));
 
 
             Random rnd = new Random(DateTime.Now.Millisecond);
 
-            for (int i = 0, m = 1; i != 24; i++, m++)
+            for (int i = 0, m = 1; i != checks_count; i++, m++)
             {
                 List<CheckItem> checkItems = new List<CheckItem>();
 

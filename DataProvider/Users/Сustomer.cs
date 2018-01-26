@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataProvider.Users
 {
-    public class Customer : Person
+    public sealed class Customer : Person
     {
         public string Email { get; set; }
 

@@ -7,7 +7,7 @@ using DataProvider.Sale;
 
 namespace DataProvider.Reports
 {
-    public class ReportByMonth
+    public sealed class ReportByMonth
     {
         /// <summary>
         /// Чеки по которым будет совершенна выборка
@@ -58,10 +58,7 @@ namespace DataProvider.Reports
 
                 return $"{result.Custoner.Name}, Всего закрытых чеков: {result.CountSale}";
             }
-
-
         }
-
         public ReportByMonth(byte month)
         {
             this.MonthNumber = month;

@@ -22,6 +22,7 @@ namespace DataProvider
         {
             ReportByMonth.Checks = Checks;
             ReportByCustomer.Checks = Checks;
+            ReportReminder.Checks = Checks;
         }
         /// <summary>
         /// Загрузить список покупателей
@@ -153,6 +154,16 @@ namespace DataProvider
             }
 
             return ReportsByCustomers;
+        }
+        /// <summary>
+        /// Возвращает напоминание за два месяца от текущей даты о необходимости купит крепеж, тем у кого есть инструмент.
+        /// </summary>
+        /// <returns></returns>
+        public List<ReportRow> GetReportReminder() {
+
+            var reports = new ReportReminder();
+
+            return reports.Reporting();
         }
     }
 }

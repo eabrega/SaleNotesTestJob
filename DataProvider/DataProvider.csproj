@@ -44,6 +44,7 @@
     <Compile Include="Provider.cs" />
     <Compile Include="Reports\ReportByCustomer.cs" />
     <Compile Include="Reports\ReportByMonth.cs" />
+    <Compile Include="Reports\ReportReminder.cs" />
     <Compile Include="Sale\Goods.cs" />
     <Compile Include="Sale\CheckItem.cs" />
     <Compile Include="Sale\Сheck.cs" />

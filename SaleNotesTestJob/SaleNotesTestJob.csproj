@@ -77,6 +77,8 @@
     </Compile>
     <None Include="Properties\DataSources\DataProvider.Reports.ReportByCustomer.datasource" />
     <None Include="Properties\DataSources\DataProvider.Reports.ReportByMonth.datasource" />
+    <None Include="Properties\DataSources\DataProvider.Reports.ReportReminder.datasource" />
+    <None Include="Properties\DataSources\DataProvider.Reports.ReportRow.datasource" />
     <None Include="Properties\DataSources\DataProvider.Sale.CheckVisualiser.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

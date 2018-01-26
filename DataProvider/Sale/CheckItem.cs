@@ -12,8 +12,8 @@ namespace DataProvider.Sale
     /// <summary>
     /// Строка в чеке
     /// </summary>
-    [DebuggerDisplay("{SaleGoods.Name} х {Quantity} = {Cost} р.")]
-    public class CheckItem
+    [DebuggerDisplay("{SaleGoods.Name} {Price} х {Quantity} = {Cost}")]
+    public sealed class CheckItem
     {
         public Guid Identity { get; } = Guid.NewGuid();
         /// <summary>
@@ -36,10 +36,13 @@ namespace DataProvider.Sale
                 return (SaleGoods.Price * Quantity).ToString("C");
             }
         }
-
         public CheckItem(Goods goods, int quantity ) {
             this.SaleGoods = goods;
             this.Quantity = quantity;
+        }
+        public override string ToString()
+        {
+            return $"{SaleGoods.Name} {Price} x {Quantity} - {Cost} "; 
         }
     }
 }

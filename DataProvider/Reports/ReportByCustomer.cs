@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace DataProvider.Reports
 {
-    public class ReportByCustomer
+    public sealed class ReportByCustomer
     {
         /// <summary>
         /// Чеки по которым будет совершенна выборка
@@ -60,9 +60,7 @@ namespace DataProvider.Reports
                 }
             }
         }
-
         public int MonthNumberMaxCheck { get { return _monthNumber; } }
-
         public ReportByCustomer(Customer customer) {
 
             CurentCustomer = customer;

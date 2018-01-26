@@ -12,7 +12,7 @@ namespace DataProvider.Sale
     /// Товарный чек
     /// </summary>
     [DebuggerDisplay("{Number} {Customer.Name} - {Total} р.")]
-    public class Check
+    public sealed class Check
     {
         static int _number = 0;
         public Guid Identity { get; } = Guid.NewGuid();

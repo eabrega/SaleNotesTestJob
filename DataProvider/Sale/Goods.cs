@@ -11,7 +11,7 @@ namespace DataProvider.Sale
     /// Еденица товара
     /// </summary>
     [DebuggerDisplay("{Name} - {Price} р.")]
-    public class Goods
+    public sealed class Goods
     {
         public Guid Identity { get; }
         public string Name { get; }

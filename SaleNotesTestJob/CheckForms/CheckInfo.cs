@@ -1,4 +1,4 @@
-﻿using SaleNotesTestJob.CheckForms;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataProvider.Sale;
 
-namespace SaleNotesTestJob.CheckInfo
+namespace SaleNotesTestJob.CheckForms
 {
     public partial class CheckInfo : Form
     {
@@ -27,9 +27,7 @@ namespace SaleNotesTestJob.CheckInfo
             Statys.Text = check.PaymentType.ToString();
             TotalCost.Text = check.Total.ToString("C");
 
-            dataGridView1.DataSource = Googs;
-            
+            dataGridView1.DataSource = Googs;            
         }
-
     }
 }

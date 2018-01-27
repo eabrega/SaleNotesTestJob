@@ -58,17 +58,17 @@
             this.reportByCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.ReportRemided = new System.Windows.Forms.DataGridView();
-            this.findCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.reportRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.findCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -84,11 +84,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportRemided)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.findCustomerBindingSource)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.toolStrip3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.findCustomerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -218,7 +218,7 @@
             this.tabPage2.Location = new System.Drawing.Point(8, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1648, 1071);
+            this.tabPage2.Size = new System.Drawing.Size(1648, 1032);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Отчет по месяцам";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -241,7 +241,7 @@
             this.ReportMonth.Name = "ReportMonth";
             this.ReportMonth.ReadOnly = true;
             this.ReportMonth.RowTemplate.Height = 33;
-            this.ReportMonth.Size = new System.Drawing.Size(1642, 1065);
+            this.ReportMonth.Size = new System.Drawing.Size(1642, 1026);
             this.ReportMonth.TabIndex = 0;
             // 
             // monthNumberDataGridViewTextBoxColumn
@@ -292,7 +292,7 @@
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1648, 1071);
+            this.tabPage3.Size = new System.Drawing.Size(1648, 1032);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Отчет по покупателям";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -314,7 +314,7 @@
             this.ReportCustomer.Name = "ReportCustomer";
             this.ReportCustomer.ReadOnly = true;
             this.ReportCustomer.RowTemplate.Height = 33;
-            this.ReportCustomer.Size = new System.Drawing.Size(1642, 1065);
+            this.ReportCustomer.Size = new System.Drawing.Size(1642, 1026);
             this.ReportCustomer.TabIndex = 0;
             // 
             // Column1
@@ -359,7 +359,7 @@
             this.tabPage4.Location = new System.Drawing.Point(8, 39);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1648, 1071);
+            this.tabPage4.Size = new System.Drawing.Size(1648, 1032);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Давно не покупают крепеж";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -380,33 +380,36 @@
             this.ReportRemided.Name = "ReportRemided";
             this.ReportRemided.ReadOnly = true;
             this.ReportRemided.RowTemplate.Height = 33;
-            this.ReportRemided.Size = new System.Drawing.Size(1642, 1065);
+            this.ReportRemided.Size = new System.Drawing.Size(1642, 1026);
             this.ReportRemided.TabIndex = 0;
             // 
-            // findCustomerBindingSource
+            // nameDataGridViewTextBoxColumn2
             // 
-            this.findCustomerBindingSource.DataMember = "FindCustomer";
+            this.nameDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Покупатель";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // toolStrip1
+            // goodsDataGridViewTextBoxColumn
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(375, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(203, 39);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.goodsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.goodsDataGridViewTextBoxColumn.DataPropertyName = "Goods";
+            this.goodsDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.goodsDataGridViewTextBoxColumn.Name = "goodsDataGridViewTextBoxColumn";
+            this.goodsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // toolStripButton2
+            // dateDataGridViewTextBoxColumn
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(191, 36);
-            this.toolStripButton2.Text = "Новый заказ";
+            this.dateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата последнего заказа";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reportRowBindingSource
+            // 
+            this.reportRowBindingSource.DataSource = typeof(DataProvider.Reports.ReportRow);
             // 
             // toolStrip2
             // 
@@ -450,33 +453,31 @@
             this.toolStripButton1.Size = new System.Drawing.Size(182, 36);
             this.toolStripButton1.Text = "Покупатели";
             // 
-            // reportRowBindingSource
+            // toolStrip1
             // 
-            this.reportRowBindingSource.DataSource = typeof(DataProvider.Reports.ReportRow);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(347, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip1.Size = new System.Drawing.Size(203, 39);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // nameDataGridViewTextBoxColumn2
+            // toolStripButton2
             // 
-            this.nameDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Покупатель";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(191, 36);
+            this.toolStripButton2.Text = "Новый заказ";
+            this.toolStripButton2.Click += new System.EventHandler(this.NewCkeck_Click);
             // 
-            // goodsDataGridViewTextBoxColumn
+            // findCustomerBindingSource
             // 
-            this.goodsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.goodsDataGridViewTextBoxColumn.DataPropertyName = "Goods";
-            this.goodsDataGridViewTextBoxColumn.HeaderText = "Наименование";
-            this.goodsDataGridViewTextBoxColumn.Name = "goodsDataGridViewTextBoxColumn";
-            this.goodsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата последнего заказа";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.findCustomerBindingSource.DataMember = "FindCustomer";
             // 
             // Main
             // 
@@ -503,14 +504,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReportRemided)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.findCustomerBindingSource)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.findCustomerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

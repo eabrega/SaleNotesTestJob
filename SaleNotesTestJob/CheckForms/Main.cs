@@ -8,18 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataProvider;
-using DataProvider.Sale;
-using DataProvider.Users;
-using DataProvider.Reports;
 
 namespace SaleNotesTestJob.CheckForms
 {
     public partial class Main : Form
     {
-        Provider SaleDataSet = new Provider();
-
-        List<Goods> goods = new List<Goods>();
-        List<Customer> customers = new List<Customer>();
         public Main()
 
         {
@@ -28,77 +21,93 @@ namespace SaleNotesTestJob.CheckForms
             DataSetInit(30, 12); // создание случайных чеков
 
             ChecksView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ChecksView.DataSource = SaleDataSet.GetChecksVisual().OrderBy(x => x.Data).ToList();
+            ChecksView.DataSource = Provider.GetChecksVisual().OrderBy(x => x.Data).ToList();
 
             ChecksView.CellMouseDoubleClick += ChecksView_CellMouseDoubleClick;
 
-            tabControl1.Selected += TabPage2_Click;            
+            tabControl1.Selected += TabSelect_Click;
+            Provider.ChecksListUpdated += Provider_ChecksListUpdated;         
         }
 
-        void TabPage2_Click(object sender, EventArgs e)
+        private void Provider_ChecksListUpdated(DataProvider.Sale.Check obj)
+        {
+            ChecksView.DataSource = null;
+            ChecksView.DataSource = Provider.GetChecksVisual().OrderBy(x => x.Data).ToList();
+        }
+
+        void TabSelect_Click(object sender, EventArgs e)
         {
             var m = (sender as TabControl).SelectedIndex;
 
+            if (m == 0) {
+                ReportMonth.DataSource = Provider.GetChecksVisual().OrderBy(x => x.Data).ToList();
+            }
             if (m == 1)
             {
-                ReportMonth.DataSource = SaleDataSet.GetReportsByMonths(2016);
+                ReportMonth.DataSource = Provider.GetReportsByMonths(2016);
             }
             if (m == 2)
             {
-                ReportCustomer.DataSource = SaleDataSet.GetReportsByCustomers(2016);
+                ReportCustomer.DataSource = Provider.GetReportsByCustomers(2016);
             }
             if (m == 3)
             {
-                ReportRemided.DataSource = SaleDataSet.GetReportReminder();
+                ReportRemided.DataSource = Provider.GetReportReminder();
             }
         }
         void ChecksView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var row_index = SaleDataSet.GetCheckByIndex(e.RowIndex);
+            var row_index = Provider.GetCheckByIndex(e.RowIndex);
 
-            Form info = new CheckInfo.CheckInfo(row_index);
+            Form info = new CheckInfo(row_index);
             info.Show();
         }
         void DataSetInit(int count_googs, int checks_count)
         {
+            Provider.AddCustomer("Брега", "eabrega@gmail.com");
+            Provider.AddCustomer("Ушакова", "babyy@gmail.com");
+            Provider.AddCustomer("Ломакина", "lomakin@gmail.com");
+            Provider.AddCustomer("Пушкин", "puskin@gmail.com");
 
-            customers.Add(new Customer("Брега", "eabrega@gmail.com"));
-            customers.Add(new Customer("Ушакова", "babyy@gmail.com"));
-            customers.Add(new Customer("Ломакина", "lomakin@gmail.com"));
-            customers.Add(new Customer("Пушкин", "puskin@gmail.com"));
-
-            SaleDataSet.AddCustomers(customers);
-
-
-            goods.Add(new Goods("Шайба М10", 2));
-            goods.Add(new Goods("Винт М10", 25));
-            goods.Add(new Goods("Шуруповерт Makita f56", 11430.40));
-            goods.Add(new Goods("Молоток", 720.72));
-            goods.Add(new Goods("Бензин АИ-95", 38.40));
-            goods.Add(new Goods("Гвоздь", 10.86));
-            goods.Add(new Goods("Шуруп", 17.40));
-
+            Provider.AddGoods("Шайба М10", 2);
+            Provider.AddGoods("Винт М10", 25);
+            Provider.AddGoods("Шуруповерт Makita f56", 11430.40);
+            Provider.AddGoods("Молоток", 720.72);
+            Provider.AddGoods("Бензин АИ-95", 38.40);
+            Provider.AddGoods("Гвоздь", 10.86);
+            Provider.AddGoods("Шуруп", 17.40);
 
             Random rnd = new Random(DateTime.Now.Millisecond);
 
             for (int i = 0, m = 1; i != checks_count; i++, m++)
             {
-                List<CheckItem> checkItems = new List<CheckItem>();
-
-                foreach (var item in goods)
-                {
-                    var quantity = rnd.Next(0, count_googs);
-                    checkItems.Add(new CheckItem(item, quantity));
-                }
-                var count = customers.Count - 1;
+                var count = Provider.GetCustomers().Count - 1;
                 var customer_index = rnd.Next(0, count);
 
                 m = (m > 12 ? m = 1 : m);
 
                 DateTime data = new DateTime(2016, m, 12);
 
-                SaleDataSet.MakeCheck(checkItems, customers[customer_index], data, ePayment.Cash);
+                var newChecks = Provider.MakeCheck(Provider.GetCustomers()[customer_index], data);
+
+                foreach (var item in Provider.GetGoods())
+                {
+                    var quantity = rnd.Next(0, count_googs);
+                    Provider.AddCheckOrdeItem(newChecks, item, quantity);
+                }
+
+                // виртуально совершим оплаты по всем чекам
+
+                foreach (var item in Provider.GetChecks())
+                {
+                    Provider.CloseCheck(item, DataProvider.Sale.ePayment.MasterCard);
+                }
             }
+        }
+        void NewCkeck_Click(object sender, EventArgs e)
+        {
+            Form newChecks = new NewCheck();
+            newChecks.Show();
         }
     }
 }

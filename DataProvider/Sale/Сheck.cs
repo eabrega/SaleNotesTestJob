@@ -12,15 +12,15 @@ namespace DataProvider.Sale
     /// Товарный чек
     /// </summary>
     [DebuggerDisplay("{Number} {Customer.Name} - {Total} р.")]
-    public sealed class Check
+     public class Check
     {
         static int _number = 0;
         public Guid Identity { get; } = Guid.NewGuid();
         public DateTime Date { get; }
         public long Number { get; }
         public Customer Customer { get; }
-        public List<CheckItem> Items { get; }
-        public ePayment PaymentType { get; }
+        public List<CheckItem> Items { get; } = new List<CheckItem>();
+        public ePayment PaymentType { get; set; }
         /// <summary>
         ///  Цена всех позиций в чеке, вычисляемое поле
         /// </summary>
@@ -33,16 +33,19 @@ namespace DataProvider.Sale
         /// Форматированная строка таблицы
         /// </summary>
         public CheckVisualiser LikeTableRow { get; }
-        public Check(List<CheckItem> checkItems, Customer customer, DateTime date, ePayment pay)
+        public Check(Customer customer, DateTime date)
         {
             _number++;
             Number = _number;
             Customer = customer;
-            Items = checkItems;
             Date = date;
-            PaymentType = pay;
+            PaymentType = ePayment.NoPayment;
 
             LikeTableRow = new CheckVisualiser(this);
+        }
+        public Check() {
+            _number++;
+            Number = _number;
         }
 
     }

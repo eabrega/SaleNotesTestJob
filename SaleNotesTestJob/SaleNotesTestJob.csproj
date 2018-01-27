@@ -58,6 +58,12 @@
     <Compile Include="CheckForms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckForms\NewCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckForms\NewCheck.Designer.cs">
+      <DependentUpon>NewCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CheckForms\CheckInfo.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckForms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckForms\NewCheck.resx">
+      <DependentUpon>NewCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,7 +88,13 @@
     <None Include="Properties\DataSources\DataProvider.Reports.ReportByMonth.datasource" />
     <None Include="Properties\DataSources\DataProvider.Reports.ReportReminder.datasource" />
     <None Include="Properties\DataSources\DataProvider.Reports.ReportRow.datasource" />
+    <None Include="Properties\DataSources\DataProvider.Sale.Check.datasource" />
+    <None Include="Properties\DataSources\DataProvider.Sale.CheckItem.datasource" />
     <None Include="Properties\DataSources\DataProvider.Sale.CheckVisualiser.datasource" />
+    <None Include="Properties\DataSources\DataProvider.Sale.Goods.datasource" />
+    <None Include="Properties\DataSources\DataProvider.Users.Customer.datasource" />
+    <None Include="Properties\DataSources\DataProvider.Users.Person.datasource" />
+    <None Include="Properties\DataSources\SaleNotesTestJob.CheckForms.NewCheck.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

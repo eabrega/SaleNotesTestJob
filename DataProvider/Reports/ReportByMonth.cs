@@ -38,7 +38,7 @@ namespace DataProvider.Reports
                     .FirstOrDefault();
 
 
-                return $"{topsalling.Name} - {topsalling.Quantity.ToString()} шт.";
+                return $"{topsalling?.Name} {topsalling?.Quantity.ToString() ?? "0"} шт.";
             }
 
         }
@@ -49,14 +49,14 @@ namespace DataProvider.Reports
                     .Select(
                         x => new
                         {
-                            Custoner = x.Customer,
+                            Customer = x.Customer,
                             CountSale = _CurentChecks.Where(c => c.Customer == x.Customer).Count(),
                         }
                      )
                      .OrderByDescending(x => x.CountSale)
                      .FirstOrDefault();
 
-                return $"{result.Custoner.Name}, Всего закрытых чеков: {result.CountSale}";
+                return $"{result?.Customer?.Name} Всего закрытых чеков: {result?.CountSale ?? 0}";
             }
         }
         public ReportByMonth(byte month)
@@ -65,7 +65,7 @@ namespace DataProvider.Reports
             _CurentChecks = Checks.Where(x => x.Date.Month == month && x.Date.Year == Year).ToList();
 
 
-            if (_CurentChecks.Count() < 1 && Year > 0) throw new Exception("За указанный год нет чеков");
+           // if (_CurentChecks.Count() < 1 && Year > 0) throw new Exception("За указанный год нет чеков");
         }
     }
 }

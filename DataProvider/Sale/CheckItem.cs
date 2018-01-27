@@ -36,6 +36,9 @@ namespace DataProvider.Sale
                 return (SaleGoods.Price * Quantity).ToString("C");
             }
         }
+        public CheckItem() {
+
+        }
         public CheckItem(Goods goods, int quantity ) {
             this.SaleGoods = goods;
             this.Quantity = quantity;

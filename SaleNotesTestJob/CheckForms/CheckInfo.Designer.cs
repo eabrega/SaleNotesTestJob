@@ -1,4 +1,4 @@
-﻿namespace SaleNotesTestJob.CheckInfo
+﻿namespace SaleNotesTestJob.CheckForms
 {
     partial class CheckInfo
     {
@@ -76,8 +76,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.59664F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.40336F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1574, 947);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -87,9 +87,9 @@
             this.flowLayoutPanel5.Controls.Add(this.label9);
             this.flowLayoutPanel5.Controls.Add(this.TotalCost);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 891);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 892);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(1568, 53);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(1568, 52);
             this.flowLayoutPanel5.TabIndex = 2;
             // 
             // label9
@@ -126,7 +126,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1568, 735);
+            this.dataGridView1.Size = new System.Drawing.Size(1568, 736);
             this.dataGridView1.TabIndex = 0;
             // 
             // saleGoodsDataGridViewTextBoxColumn
@@ -303,7 +303,7 @@
             // 
             // checkInfoBindingSource
             // 
-            this.checkInfoBindingSource.DataSource = typeof(SaleNotesTestJob.CheckInfo.CheckInfo);
+            this.checkInfoBindingSource.DataSource = typeof(SaleNotesTestJob.CheckForms.CheckInfo);
             // 
             // CheckInfo
             // 

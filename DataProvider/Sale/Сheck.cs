@@ -57,7 +57,7 @@ namespace DataProvider.Sale
     {
         Check _check { get; }
         public long Number { get { return _check.Number; } }
-        public string Data { get { return _check.Date.ToString("dd.MM.yyyy"); } }
+        public DateTime Data { get { return _check.Date; } }
         public string Name { get { return $"{_check.Customer.Name}"; } }
         public string Email { get { return _check.Customer.Email; } }
         public string Cost { get { return $"{_check.Total.ToString("C")}"; } }

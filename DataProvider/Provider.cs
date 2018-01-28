@@ -19,6 +19,7 @@ namespace DataProvider
         static List<Goods> AllGoods { get; set; } = new List<Goods>();
         static List<ReportByMonth> ReportsByMonths { get; set; } = new List<ReportByMonth>();
         static List<ReportByCustomer> ReportsByCustomers { get; set; } = new List<ReportByCustomer>();
+        static int ReportYear { get; set; } = DateTime.Now.Year;
 
         static public event Action<Check> ChecksListUpdated;
         static Provider()
@@ -65,6 +66,7 @@ namespace DataProvider
         /// <returns></returns>
         static public Check GetCheckByIndex(int index)
         {
+            if (index < 0) return null;
             return Checks[index];
         }
         /// <summary>
@@ -73,6 +75,16 @@ namespace DataProvider
         /// <returns></returns>
         static public List<Goods> GetGoods() {
             return AllGoods;
+        }
+        /// <summary>
+        /// Возвращает вощь по ее ID
+        /// </summary>
+        /// <param name="id">ID Вещи</param>
+        /// <returns></returns>
+        static public Goods GetGoodsById(Guid? id) {
+
+            if (id == null) return null;
+            return AllGoods.Find(x=>x.Identity == id);
         }
         /// <summary>
         /// Создает Чек
@@ -87,6 +99,20 @@ namespace DataProvider
             return Checks.Last();
         }
         /// <summary>
+        /// Удаляет чек, если он не оплачен.
+        /// </summary>
+        /// <param name="check"></param>
+        /// <returns></returns>
+        static public bool RemoveCheck(Check check) {
+            if (check.PaymentType == ePayment.NoPayment)
+            {
+                Checks.Remove(check);
+                ChecksListUpdated?.Invoke(null);
+                return true;
+            }
+            else return false;
+        }
+        /// <summary>
         /// Создает строку чека
         /// </summary>
         /// <param name="goods">Товар</param>
@@ -94,6 +120,8 @@ namespace DataProvider
         /// <returns></returns>
         static public void AddCheckOrdeItem(Check parent, Goods goods, int guantity)
         {
+            if (goods == null || parent == null) throw new Exception("Чек не был создан, неверный параметр!");
+
             parent.Items.Add(new CheckItem(goods, guantity));
             ChecksListUpdated?.Invoke(parent);
         }
@@ -138,11 +166,11 @@ namespace DataProvider
         /// Возвращает отчет по месяцам
         /// </summary>
         /// <returns></returns>
-        static public List<ReportByMonth> GetReportsByMonths(int year) {
+        static public List<ReportByMonth> GetReportsByMonths() {
 
             try
             {
-                ReportByMonth.Year = year;
+                ReportByMonth.Year = ReportYear;
                 ReportsByMonths.Clear();
 
                 for (int i = 1; i < 13; i++)
@@ -163,9 +191,9 @@ namespace DataProvider
         /// Возвращает отчет по пользователям
         /// </summary>
         /// <returns></returns>
-        static public List<ReportByCustomer> GetReportsByCustomers(int year) {
+        static public List<ReportByCustomer> GetReportsByCustomers() {
 
-            ReportByCustomer.Year = year;
+            ReportByCustomer.Year = ReportYear;
 
             foreach (Customer item in Customers)
             {

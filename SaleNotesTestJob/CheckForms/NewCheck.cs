@@ -15,7 +15,6 @@ namespace SaleNotesTestJob.CheckForms
 {
     public partial class NewCheck : Form
     {
-        List<CheckItem> items = new List<CheckItem>();
         DateTime Date { get; set; }
         Customer Customer { get; set; }
         public NewCheck()
@@ -24,10 +23,8 @@ namespace SaleNotesTestJob.CheckForms
 
             comboBox1.DataSource = Provider.GetCustomers();
 
-            //CheckItems.DataSource = items;
             CheckItems.AllowUserToAddRows = false;
             CheckItems.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
-
 
             Goods.DataSource = Provider.GetGoods();
 
@@ -39,14 +36,16 @@ namespace SaleNotesTestJob.CheckForms
             Cost.ReadOnly = true;
             Price.ReadOnly = true;
 
-            CheckItems.CellValueChanged += CheckItems_CellValueChanged;
+            CheckItems.CellValueChanged += GoodsSelect;
+
+            Date = dateTimePicker1.Value;
         }
-        void CheckItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        void GoodsSelect(object sender, DataGridViewCellEventArgs e)
         {
             Guid selectGuid = Guid.Empty;
             Goods selectedGoods = null;
 
-            double quantity = Convert.ToDouble(CheckItems.CurrentRow.Cells[Quantity.Name].Value);
+            int quantity = Convert.ToInt32(CheckItems.CurrentRow.Cells[Quantity.Name].Value);
 
             if (CheckItems.CurrentRow.Cells[Goods.Name].Value != null)
             {
@@ -58,18 +57,20 @@ namespace SaleNotesTestJob.CheckForms
 
             if (selectedGoods != null && quantity > 0)
             {
-                CheckItems.CurrentRow.Cells[Cost.Name].Value = selectedGoods.Price * quantity;
+                CheckItems.CurrentRow.Cells[Cost.Name].Value = (selectedGoods.Price * quantity).ToString("C");
             }
+
+            label4.Text = GetGoodsCost();
         }
         void CustomerSelected(object sender, EventArgs e)
         {
-            Customer = comboBox1.SelectedItem as Customer ?? null;
+            Customer = (Customer)comboBox1.SelectedItem;
         }
         void DateSelect(object sender, EventArgs e)
         {
             Date = dateTimePicker1.Value;
         }
-        void CheckItems_KeyUp(object sender, KeyEventArgs e)
+        void DellRow(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
             {
@@ -80,21 +81,42 @@ namespace SaleNotesTestJob.CheckForms
                     CheckItems.Rows.RemoveAt(item);
                 }
             }
+
+            label4.Text = GetGoodsCost();
         }
         void AddGoods(object sender, EventArgs e)
         {
-            items.Add(new CheckItem());
+            CheckItems.Rows.Add();
         }
         void CreateCheck(object sender, EventArgs e)
         {
             var check = Provider.MakeCheck(Customer, Date);
 
+            foreach (DataGridViewRow item in CheckItems.Rows)
+            {
+                var goods = Provider.GetGoodsById((Guid?)item.Cells[Goods.Name].Value);
+                var quantity = Convert.ToInt32(item.Cells[Quantity.Name].Value);
 
-            var goods = CheckItems.Rows;
+                if (goods != null) Provider.AddCheckOrdeItem(check, goods, quantity);
+            }
 
+            if (check.Items.Count < 1)
+                Provider.RemoveCheck(check);
+            Close();
+        }
+        string GetGoodsCost() {
 
+            double cost = 0;
 
-           // Provider.AddCheckOrdeItem(check, );
+            foreach (DataGridViewRow item in CheckItems.Rows)
+            {
+                var goodsPrice = Provider.GetGoodsById((Guid?)item.Cells[Goods.Name].Value ?? null)?.Price ?? 0;
+                var quantity = Convert.ToInt32(item.Cells[Quantity.Name].Value);
+
+                cost += (goodsPrice * quantity);
+            }
+
+            return cost.ToString("C");
         }
     }
 }

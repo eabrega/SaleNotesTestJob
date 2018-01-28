@@ -38,6 +38,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.CheckItems = new System.Windows.Forms.DataGridView();
+            this.Goods = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -46,10 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.checkItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Goods = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -165,7 +165,28 @@
             this.CheckItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.CheckItems.Size = new System.Drawing.Size(1668, 921);
             this.CheckItems.TabIndex = 6;
-            this.CheckItems.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckItems_KeyUp);
+            this.CheckItems.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DellRow);
+            // 
+            // Goods
+            // 
+            this.Goods.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Goods.HeaderText = "Column1";
+            this.Goods.Name = "Goods";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Цена";
+            this.Price.Name = "Price";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Количество";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "Стоимость";
+            this.Cost.Name = "Cost";
             // 
             // tableLayoutPanel2
             // 
@@ -214,6 +235,7 @@
             this.comboBox1.Size = new System.Drawing.Size(913, 45);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.ValueMember = "Identity";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.CustomerSelected);
             // 
             // dateTimePicker1
             // 
@@ -262,27 +284,6 @@
             // checkItemBindingSource
             // 
             this.checkItemBindingSource.DataSource = typeof(DataProvider.Sale.CheckItem);
-            // 
-            // Cost
-            // 
-            this.Cost.HeaderText = "Стоимость";
-            this.Cost.Name = "Cost";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Количество";
-            this.Quantity.Name = "Quantity";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Цена";
-            this.Price.Name = "Price";
-            // 
-            // Goods
-            // 
-            this.Goods.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Goods.HeaderText = "Column1";
-            this.Goods.Name = "Goods";
             // 
             // NewCheck
             // 

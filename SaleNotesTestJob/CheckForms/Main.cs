@@ -21,34 +21,33 @@ namespace SaleNotesTestJob.CheckForms
             DataSetInit(30, 12); // создание случайных чеков
 
             ChecksView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ChecksView.DataSource = Provider.GetChecksVisual().OrderBy(x => x.Data).ToList();
+            ChecksView.DataSource = Provider.GetChecksVisual();
 
             ChecksView.CellMouseDoubleClick += ChecksView_CellMouseDoubleClick;
 
             tabControl1.Selected += TabSelect_Click;
-            Provider.ChecksListUpdated += Provider_ChecksListUpdated;         
+            Provider.ChecksListUpdated += Provider_ChecksListUpdated;
         }
-
-        private void Provider_ChecksListUpdated(DataProvider.Sale.Check obj)
+        void Provider_ChecksListUpdated(DataProvider.Sale.Check obj)
         {
             ChecksView.DataSource = null;
-            ChecksView.DataSource = Provider.GetChecksVisual().OrderBy(x => x.Data).ToList();
+            ChecksView.DataSource = Provider.GetChecksVisual();
         }
-
         void TabSelect_Click(object sender, EventArgs e)
         {
             var m = (sender as TabControl).SelectedIndex;
 
-            if (m == 0) {
-                ReportMonth.DataSource = Provider.GetChecksVisual().OrderBy(x => x.Data).ToList();
+            if (m == 0)
+            {
+                ReportMonth.DataSource = Provider.GetChecksVisual();
             }
             if (m == 1)
             {
-                ReportMonth.DataSource = Provider.GetReportsByMonths(2016);
+                ReportMonth.DataSource = Provider.GetReportsByMonths();
             }
             if (m == 2)
             {
-                ReportCustomer.DataSource = Provider.GetReportsByCustomers(2016);
+                ReportCustomer.DataSource = Provider.GetReportsByCustomers();
             }
             if (m == 3)
             {
@@ -57,10 +56,13 @@ namespace SaleNotesTestJob.CheckForms
         }
         void ChecksView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var row_index = Provider.GetCheckByIndex(e.RowIndex);
+            var row_selected = Provider.GetCheckByIndex(e.RowIndex);
 
-            Form info = new CheckInfo(row_index);
-            info.Show();
+            if (row_selected != null)
+            {
+                Form info = new CheckInfo(row_selected);
+                info.Show();
+            }
         }
         void DataSetInit(int count_googs, int checks_count)
         {
@@ -79,14 +81,16 @@ namespace SaleNotesTestJob.CheckForms
 
             Random rnd = new Random(DateTime.Now.Millisecond);
 
-            for (int i = 0, m = 1; i != checks_count; i++, m++)
+            int y = DateTime.Now.Year;
+            int d = DateTime.Now.Day;
+            int m = DateTime.Now.Month;
+
+            for (int i = 0;  i != checks_count; i++)
             {
+                DateTime data = new DateTime(y, m, d);
+
                 var count = Provider.GetCustomers().Count - 1;
                 var customer_index = rnd.Next(0, count);
-
-                m = (m > 12 ? m = 1 : m);
-
-                DateTime data = new DateTime(2016, m, 12);
 
                 var newChecks = Provider.MakeCheck(Provider.GetCustomers()[customer_index], data);
 
@@ -102,12 +106,26 @@ namespace SaleNotesTestJob.CheckForms
                 {
                     Provider.CloseCheck(item, DataProvider.Sale.ePayment.MasterCard);
                 }
+
+                m--;
+
+                if (m < 1)
+                {
+                    m = 12;
+                    y--;
+                }
             }
         }
         void NewCkeck_Click(object sender, EventArgs e)
         {
             Form newChecks = new NewCheck();
             newChecks.Show();
+        }
+
+        void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            //Form ttt = new DateInsert();
+            //ttt.Show();
         }
     }
 }

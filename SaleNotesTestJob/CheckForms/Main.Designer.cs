@@ -34,61 +34,62 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ChecksView = new System.Windows.Forms.DataGridView();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkVisualiserBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ReportMonth = new System.Windows.Forms.DataGridView();
-            this.monthNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.averageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.topSellingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BestCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportByMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.ReportCustomer = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costByYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Average = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaxCheckCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportByCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.ReportRemided = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.findCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkVisualiserBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.monthNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.averageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.topSellingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportByMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.costByYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportByCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChecksView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkVisualiserBindingSource1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportMonth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByMonthBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportRemided)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStrip3.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.findCustomerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkVisualiserBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByMonthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -107,9 +108,9 @@
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip3);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             // 
             // tabControl1
             // 
@@ -155,62 +156,7 @@
             this.ChecksView.RowTemplate.Height = 33;
             this.ChecksView.Size = new System.Drawing.Size(1642, 1065);
             this.ChecksView.TabIndex = 1;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.DividerWidth = 1;
-            this.numberDataGridViewTextBoxColumn.HeaderText = "№ заказа";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataDataGridViewTextBoxColumn
-            // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
-            this.dataDataGridViewTextBoxColumn.DividerWidth = 1;
-            this.dataDataGridViewTextBoxColumn.HeaderText = "Дата создания";
-            this.dataDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.DividerWidth = 1;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Покупатель";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "E-Mail";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.DividerWidth = 1;
-            this.costDataGridViewTextBoxColumn.HeaderText = "Сумма";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paymentDataGridViewTextBoxColumn
-            // 
-            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
-            this.paymentDataGridViewTextBoxColumn.DividerWidth = 1;
-            this.paymentDataGridViewTextBoxColumn.HeaderText = "Оплата";
-            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
-            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // checkVisualiserBindingSource1
-            // 
-            this.checkVisualiserBindingSource1.DataSource = typeof(DataProvider.Sale.CheckVisualiser);
+            this.ChecksView.Sorted += new System.EventHandler(this.NewCkeck_Click);
             // 
             // tabPage2
             // 
@@ -218,7 +164,7 @@
             this.tabPage2.Location = new System.Drawing.Point(8, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1648, 1032);
+            this.tabPage2.Size = new System.Drawing.Size(1648, 1071);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Отчет по месяцам";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -241,37 +187,8 @@
             this.ReportMonth.Name = "ReportMonth";
             this.ReportMonth.ReadOnly = true;
             this.ReportMonth.RowTemplate.Height = 33;
-            this.ReportMonth.Size = new System.Drawing.Size(1642, 1026);
+            this.ReportMonth.Size = new System.Drawing.Size(1642, 1065);
             this.ReportMonth.TabIndex = 0;
-            // 
-            // monthNumberDataGridViewTextBoxColumn
-            // 
-            this.monthNumberDataGridViewTextBoxColumn.DataPropertyName = "MonthNumber";
-            this.monthNumberDataGridViewTextBoxColumn.HeaderText = "Месяц";
-            this.monthNumberDataGridViewTextBoxColumn.Name = "monthNumberDataGridViewTextBoxColumn";
-            this.monthNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paymentCostDataGridViewTextBoxColumn
-            // 
-            this.paymentCostDataGridViewTextBoxColumn.DataPropertyName = "PaymentCost";
-            this.paymentCostDataGridViewTextBoxColumn.HeaderText = "Сумма за месяц";
-            this.paymentCostDataGridViewTextBoxColumn.Name = "paymentCostDataGridViewTextBoxColumn";
-            this.paymentCostDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // averageDataGridViewTextBoxColumn
-            // 
-            this.averageDataGridViewTextBoxColumn.DataPropertyName = "Average";
-            this.averageDataGridViewTextBoxColumn.HeaderText = "Средний чек ";
-            this.averageDataGridViewTextBoxColumn.Name = "averageDataGridViewTextBoxColumn";
-            this.averageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // topSellingDataGridViewTextBoxColumn
-            // 
-            this.topSellingDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.topSellingDataGridViewTextBoxColumn.DataPropertyName = "TopSelling";
-            this.topSellingDataGridViewTextBoxColumn.HeaderText = "Самый продаваемый товар";
-            this.topSellingDataGridViewTextBoxColumn.Name = "topSellingDataGridViewTextBoxColumn";
-            this.topSellingDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // BestCustomer
             // 
@@ -282,17 +199,13 @@
             this.BestCustomer.ReadOnly = true;
             this.BestCustomer.Width = 220;
             // 
-            // reportByMonthBindingSource
-            // 
-            this.reportByMonthBindingSource.DataSource = typeof(DataProvider.Reports.ReportByMonth);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.ReportCustomer);
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1648, 1032);
+            this.tabPage3.Size = new System.Drawing.Size(1648, 1071);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Отчет по покупателям";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -314,7 +227,7 @@
             this.ReportCustomer.Name = "ReportCustomer";
             this.ReportCustomer.ReadOnly = true;
             this.ReportCustomer.RowTemplate.Height = 33;
-            this.ReportCustomer.Size = new System.Drawing.Size(1642, 1026);
+            this.ReportCustomer.Size = new System.Drawing.Size(1642, 1065);
             this.ReportCustomer.TabIndex = 0;
             // 
             // Column1
@@ -324,14 +237,6 @@
             this.Column1.HeaderText = "Имя покупателя";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            // 
-            // costByYearDataGridViewTextBoxColumn
-            // 
-            this.costByYearDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.costByYearDataGridViewTextBoxColumn.DataPropertyName = "CostByYear";
-            this.costByYearDataGridViewTextBoxColumn.HeaderText = "Потраченно за год";
-            this.costByYearDataGridViewTextBoxColumn.Name = "costByYearDataGridViewTextBoxColumn";
-            this.costByYearDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Average
             // 
@@ -349,17 +254,13 @@
             this.MaxCheckCost.Name = "MaxCheckCost";
             this.MaxCheckCost.ReadOnly = true;
             // 
-            // reportByCustomerBindingSource
-            // 
-            this.reportByCustomerBindingSource.DataSource = typeof(DataProvider.Reports.ReportByCustomer);
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.ReportRemided);
             this.tabPage4.Location = new System.Drawing.Point(8, 39);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1648, 1032);
+            this.tabPage4.Size = new System.Drawing.Size(1648, 1071);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Давно не покупают крепеж";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -380,36 +281,31 @@
             this.ReportRemided.Name = "ReportRemided";
             this.ReportRemided.ReadOnly = true;
             this.ReportRemided.RowTemplate.Height = 33;
-            this.ReportRemided.Size = new System.Drawing.Size(1642, 1026);
+            this.ReportRemided.Size = new System.Drawing.Size(1642, 1065);
             this.ReportRemided.TabIndex = 0;
             // 
-            // nameDataGridViewTextBoxColumn2
+            // toolStrip1
             // 
-            this.nameDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Покупатель";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2,
+            this.toolStripButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(352, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip1.Size = new System.Drawing.Size(522, 39);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // goodsDataGridViewTextBoxColumn
+            // toolStripButton2
             // 
-            this.goodsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.goodsDataGridViewTextBoxColumn.DataPropertyName = "Goods";
-            this.goodsDataGridViewTextBoxColumn.HeaderText = "Наименование";
-            this.goodsDataGridViewTextBoxColumn.Name = "goodsDataGridViewTextBoxColumn";
-            this.goodsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата последнего заказа";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reportRowBindingSource
-            // 
-            this.reportRowBindingSource.DataSource = typeof(DataProvider.Reports.ReportRow);
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(191, 36);
+            this.toolStripButton2.Text = "Новый заказ";
+            this.toolStripButton2.Click += new System.EventHandler(this.NewCkeck_Click);
             // 
             // toolStrip2
             // 
@@ -453,31 +349,151 @@
             this.toolStripButton1.Size = new System.Drawing.Size(182, 36);
             this.toolStripButton1.Text = "Покупатели";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(347, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(203, 39);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(191, 36);
-            this.toolStripButton2.Text = "Новый заказ";
-            this.toolStripButton2.Click += new System.EventHandler(this.NewCkeck_Click);
-            // 
             // findCustomerBindingSource
             // 
             this.findCustomerBindingSource.DataMember = "FindCustomer";
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "E-Mail";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.DividerWidth = 1;
+            this.numberDataGridViewTextBoxColumn.HeaderText = "№ заказа";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.DividerWidth = 1;
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Дата создания";
+            this.dataDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.DividerWidth = 1;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Покупатель";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.DividerWidth = 1;
+            this.costDataGridViewTextBoxColumn.HeaderText = "Сумма";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            this.costDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentDataGridViewTextBoxColumn
+            // 
+            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
+            this.paymentDataGridViewTextBoxColumn.DividerWidth = 1;
+            this.paymentDataGridViewTextBoxColumn.HeaderText = "Оплата";
+            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
+            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.paymentDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // checkVisualiserBindingSource1
+            // 
+            this.checkVisualiserBindingSource1.DataSource = typeof(DataProvider.Sale.CheckVisualiser);
+            // 
+            // monthNumberDataGridViewTextBoxColumn
+            // 
+            this.monthNumberDataGridViewTextBoxColumn.DataPropertyName = "MonthNumber";
+            this.monthNumberDataGridViewTextBoxColumn.HeaderText = "Месяц";
+            this.monthNumberDataGridViewTextBoxColumn.Name = "monthNumberDataGridViewTextBoxColumn";
+            this.monthNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paymentCostDataGridViewTextBoxColumn
+            // 
+            this.paymentCostDataGridViewTextBoxColumn.DataPropertyName = "PaymentCost";
+            this.paymentCostDataGridViewTextBoxColumn.HeaderText = "Сумма за месяц";
+            this.paymentCostDataGridViewTextBoxColumn.Name = "paymentCostDataGridViewTextBoxColumn";
+            this.paymentCostDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // averageDataGridViewTextBoxColumn
+            // 
+            this.averageDataGridViewTextBoxColumn.DataPropertyName = "Average";
+            this.averageDataGridViewTextBoxColumn.HeaderText = "Средний чек ";
+            this.averageDataGridViewTextBoxColumn.Name = "averageDataGridViewTextBoxColumn";
+            this.averageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // topSellingDataGridViewTextBoxColumn
+            // 
+            this.topSellingDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.topSellingDataGridViewTextBoxColumn.DataPropertyName = "TopSelling";
+            this.topSellingDataGridViewTextBoxColumn.HeaderText = "Самый продаваемый товар";
+            this.topSellingDataGridViewTextBoxColumn.Name = "topSellingDataGridViewTextBoxColumn";
+            this.topSellingDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reportByMonthBindingSource
+            // 
+            this.reportByMonthBindingSource.DataSource = typeof(DataProvider.Reports.ReportByMonth);
+            // 
+            // costByYearDataGridViewTextBoxColumn
+            // 
+            this.costByYearDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.costByYearDataGridViewTextBoxColumn.DataPropertyName = "CostByYear";
+            this.costByYearDataGridViewTextBoxColumn.HeaderText = "Потраченно за год";
+            this.costByYearDataGridViewTextBoxColumn.Name = "costByYearDataGridViewTextBoxColumn";
+            this.costByYearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reportByCustomerBindingSource
+            // 
+            this.reportByCustomerBindingSource.DataSource = typeof(DataProvider.Reports.ReportByCustomer);
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Покупатель";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // goodsDataGridViewTextBoxColumn
+            // 
+            this.goodsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.goodsDataGridViewTextBoxColumn.DataPropertyName = "Goods";
+            this.goodsDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.goodsDataGridViewTextBoxColumn.Name = "goodsDataGridViewTextBoxColumn";
+            this.goodsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата последнего заказа";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reportRowBindingSource
+            // 
+            this.reportRowBindingSource.DataSource = typeof(DataProvider.Reports.ReportRow);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(257, 36);
+            this.toolStripButton3.Text = "Указать год отчета";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // Main
             // 
@@ -495,23 +511,23 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ChecksView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkVisualiserBindingSource1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReportMonth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByMonthBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReportCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReportRemided)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.findCustomerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkVisualiserBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByMonthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByCustomerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRowBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,12 +556,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn topSellingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BestCustomer;
         private System.Windows.Forms.BindingSource checkVisualiserBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView ReportRemided;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -561,6 +571,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }
 

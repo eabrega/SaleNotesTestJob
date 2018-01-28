@@ -14,14 +14,27 @@ namespace DataProvider
 {
     public static class Provider
     {
+        static int _year = DateTime.Now.Year;
         static List<Customer> Customers { get; set; } = new List<Customer>();
         static List<Check> Checks { get; set; } = new List<Check>();
         static List<Goods> AllGoods { get; set; } = new List<Goods>();
         static List<ReportByMonth> ReportsByMonths { get; set; } = new List<ReportByMonth>();
         static List<ReportByCustomer> ReportsByCustomers { get; set; } = new List<ReportByCustomer>();
-        static int ReportYear { get; set; } = DateTime.Now.Year;
+        static public int ReportYear {
+            get {
+                return _year;
+            }
+            set {
+                if (value != _year)
+                {
+                    _year = value;
+                    RebuildReport?.Invoke();
+                }
+            }
+        } 
 
         static public event Action<Check> ChecksListUpdated;
+        static public event Action RebuildReport;
         static Provider()
         {
             ReportByMonth.Checks = Checks;
@@ -158,9 +171,7 @@ namespace DataProvider
         /// <param name="customers"></param>
         static public void AddCustomers(List<Customer> customers)
         {
-
             Customers.AddRange(customers);
-
         }
         /// <summary>
         /// Возвращает отчет по месяцам
@@ -170,7 +181,6 @@ namespace DataProvider
 
             try
             {
-                ReportByMonth.Year = ReportYear;
                 ReportsByMonths.Clear();
 
                 for (int i = 1; i < 13; i++)
@@ -193,8 +203,8 @@ namespace DataProvider
         /// <returns></returns>
         static public List<ReportByCustomer> GetReportsByCustomers() {
 
-            ReportByCustomer.Year = ReportYear;
-
+            ReportsByCustomers.Clear();
+            
             foreach (Customer item in Customers)
             {
                 ReportsByCustomers.Add(new ReportByCustomer(item));

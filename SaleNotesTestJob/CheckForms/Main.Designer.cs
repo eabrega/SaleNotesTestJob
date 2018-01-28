@@ -549,7 +549,6 @@
         private System.Windows.Forms.BindingSource reportByMonthBindingSource;
         private System.Windows.Forms.DataGridView ReportCustomer;
         private System.Windows.Forms.BindingSource reportByCustomerBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curentCustomerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monthNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentCostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn averageDataGridViewTextBoxColumn;
@@ -562,10 +561,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costByYearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Average;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaxCheckCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn identityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource findCustomerBindingSource;
         private System.Windows.Forms.BindingSource reportRowBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;

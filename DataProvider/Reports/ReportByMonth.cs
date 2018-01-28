@@ -13,7 +13,6 @@ namespace DataProvider.Reports
         /// Чеки по которым будет совершенна выборка
         /// </summary>
         static public List<Check> Checks;
-        static public int Year;
         List<Check> _CurentChecks { get; }
         public byte MonthNumber { get; }
         public string PaymentCost { get { return _CurentChecks.Sum(x => x.Total).ToString("C"); } }
@@ -37,10 +36,8 @@ namespace DataProvider.Reports
                     .OrderByDescending(x => x.Quantity)
                     .FirstOrDefault();
 
-
                 return $"{topsalling?.Name} {topsalling?.Quantity.ToString() ?? "0"} шт.";
             }
-
         }
         public string BestCustomer {
             get {
@@ -62,10 +59,7 @@ namespace DataProvider.Reports
         public ReportByMonth(byte month)
         {
             this.MonthNumber = month;
-            _CurentChecks = Checks.Where(x => x.Date.Month == month && x.Date.Year == Year).ToList();
-
-
-           // if (_CurentChecks.Count() < 1 && Year > 0) throw new Exception("За указанный год нет чеков");
+            _CurentChecks = Checks.Where(x => x.Date.Month == month && x.Date.Year == Provider.ReportYear).ToList();
         }
     }
 }

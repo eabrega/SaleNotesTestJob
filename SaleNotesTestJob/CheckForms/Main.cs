@@ -27,7 +27,20 @@ namespace SaleNotesTestJob.CheckForms
 
             tabControl1.Selected += TabSelect_Click;
             Provider.ChecksListUpdated += Provider_ChecksListUpdated;
+            Provider.RebuildReport += Provider_RebuildReport;
         }
+
+        private void Provider_RebuildReport()
+        {
+            ReportMonth.DataSource = null;
+            ReportCustomer.DataSource = null;
+            ReportRemided.DataSource = null;
+
+            ReportMonth.DataSource = Provider.GetReportsByMonths();
+            ReportCustomer.DataSource = Provider.GetReportsByCustomers();
+            ReportRemided.DataSource = Provider.GetReportReminder();
+        }
+
         void Provider_ChecksListUpdated(DataProvider.Sale.Check obj)
         {
             ChecksView.DataSource = null;
@@ -124,8 +137,8 @@ namespace SaleNotesTestJob.CheckForms
 
         void toolStripButton3_Click(object sender, EventArgs e)
         {
-            //Form ttt = new DateInsert();
-            //ttt.Show();
+            Form ttt = new DateInsert();
+            ttt.Show();
         }
     }
 }

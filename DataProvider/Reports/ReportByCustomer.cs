@@ -15,7 +15,6 @@ namespace DataProvider.Reports
         /// Чеки по которым будет совершенна выборка
         /// </summary>
         static public List<Check> Checks;
-        static public int Year;
         int _monthNumber = 0;
         List<Check> _СurentChecks { get; }
         Customer CurentCustomer { get; }
@@ -37,8 +36,6 @@ namespace DataProvider.Reports
         }
         public string MaxCheckCost {
             get {
-
-
                 var aveCostCheckByMonth = _СurentChecks.GroupBy(x=>x.Date.Month)
                             .Select(c=> 
                             new { month = c.Key,
@@ -49,7 +46,6 @@ namespace DataProvider.Reports
                             )
                             .OrderByDescending(c=>c.cost)
                             .FirstOrDefault();
-
 
                 if (aveCostCheckByMonth == null) return (0).ToString("C");
                 else
@@ -65,7 +61,7 @@ namespace DataProvider.Reports
 
             CurentCustomer = customer;
 
-            _СurentChecks = Checks.Where(x => x.Customer == CurentCustomer && x.Date.Year == Year).ToList();  
+            _СurentChecks = Checks.Where(x => x.Customer == CurentCustomer && x.Date.Year == Provider.ReportYear).ToList();  
         }
     }
 }

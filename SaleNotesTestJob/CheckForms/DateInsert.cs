@@ -16,8 +16,18 @@ namespace SaleNotesTestJob.CheckForms
         public DateInsert()
         {
             InitializeComponent();
-
-
+            textBox1.Text = DateTime.Now.Year.ToString();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Provider.ReportYear = new DateTime(Convert.ToInt16(textBox1.Text), 1, 1).Year;
+                Close();
+            }
+            catch (Exception err) {
+                MessageBox.Show("Веденное значение не является корретным для года!");
+            }
         }
     }
 }
